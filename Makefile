@@ -8,10 +8,7 @@ dropdb:
 	podman exec -ti mysql-laragigs mysql -u root -ppassword -e "DROP DATABASE laragigs"
 
 migrate:
-	php artisan migrate
-
-seed:
-	php artisan db:seed
+	php artisan migrate:refresh --seed
 
 serve:
 	php artisan serve
