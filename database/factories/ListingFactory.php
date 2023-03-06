@@ -18,7 +18,7 @@ class ListingFactory extends Factory
     {
         return [
             'title' => $this->faker->jobTitle,
-            'tags' => $this->faker->words(3, true),
+            'tags' => implode(',', $this->faker->words(3)),
             'company' => $this->faker->company,
             'location' => $this->faker->city . ', ' . $this->faker->stateAbbr,
             'email' => $this->faker->email,

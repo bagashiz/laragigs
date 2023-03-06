@@ -10,7 +10,10 @@ dropdb:
 migrate:
 	php artisan migrate
 
+seed:
+	php artisan db:seed
+
 serve:
 	php artisan serve
 
-.PHONY: mysql createdb dropdb migrate serve
+.PHONY: mysql createdb dropdb seed migrate serve
