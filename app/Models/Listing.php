@@ -10,6 +10,7 @@ class Listing extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'company',
         'location',
@@ -20,6 +21,13 @@ class Listing extends Model
         'description',
     ];
 
+    // user returns the user that created the listing
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    // scopeFilter filters listings by tag and search query parameters
     public function scopeFilter($query, array $filters)
     {
         if ($filters['tag'] ?? false) {
